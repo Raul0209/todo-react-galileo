@@ -1,3 +1,14 @@
+# Guia para ejecutar el proyecto.
+<ol>
+  <li>Clonarlo con el comando git clone <linkDelRepo></li>
+  <li>Abrirlo con visual studio code en la carpeta raiz</li>
+  <li>Abrir una terminal adentro de visual studio code</li>
+  <li>Instalar las dependencias con el comando npm i --f</li>
+  <li>Ejecutar el programa con el comando npm run start</li>
+</ol>
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
