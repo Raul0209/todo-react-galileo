@@ -1,26 +1,22 @@
-import React from 'react';
-import { ListGroup, Button } from 'react-bootstrap';
+import React from "react";
+import { ListGroup, Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { deleteTask } from "./taskSlice";
 
-function TodoItem({ task, index, deleteTask }) {
+const TodoItem = ({ task }) => {
+  const dispatch = useDispatch();
+
   return (
-    <ListGroup.Item>
+    <ListGroup.Item className="d-flex justify-content-between align-items-center">
       <div>
-        <h2>Titulo</h2>
-        <span>{task.title}</span>
-        <h2>Descripcion</h2>
-        <span>{task.description}</span>
-
-        <h2>Fecha limite</h2>
-        <span className='text-muted'>{task.deadline}</span>
+        <strong>{task.title}</strong>
+        <div className="text-muted small">Límite: {task.deadline || "Sin fecha"}</div>
       </div>
-
-      <Button
-        onClick={() => deleteTask(index)}
-      >
+      <Button variant="danger" size="sm" onClick={() => dispatch(deleteTask(task._id))}>
         Eliminar
       </Button>
     </ListGroup.Item>
   );
-}
+};
 
 export default TodoItem;
